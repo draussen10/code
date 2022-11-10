@@ -18,8 +18,23 @@ const Moon_Algorithm = setValue => {
 	return 0 === (ch % 10);
 };
 
+function myFunc (terminator = false) {
+	if(terminator) {
+		clearTimeout(timeOutVar);
+	} else {
+		const timeOutVar = setTimeout(function(){
+			button.innerHTML = 'Проверить код'
+			button.style.backgroundColor = 'black'
+			button.style.color = 'white'
+		}, 2000);
+	}
+}
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
+
+	myFunc(false); //  -> end loop
+
 	button.style.color = 'white'
 
 	if(input.value.length !== 16) {

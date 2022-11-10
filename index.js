@@ -18,15 +18,6 @@ const Moon_Algorithm = setValue => {
 	return 0 === (ch % 10);
 };
 
-function timeoutF() {
-	timeout && clearTimeout(timeout)
-	const timeout = setTimeout(() => {
-		button.innerHTML = 'Проверить код'
-		button.style.backgroundColor = 'black'
-		button.style.color = 'white'
-	}, 2000)
-}
-
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
 	button.style.color = 'white'
@@ -45,5 +36,9 @@ form.addEventListener('submit', (e) => {
 	}
 	button.style.color = 'white'
 
-
+	setTimeout(() => {
+		button.innerHTML = 'Проверить код'
+		button.style.backgroundColor = 'black'
+		button.style.color = 'white'
+	}, 2000)
 })
